@@ -22,11 +22,6 @@ public class PackageController {
     private final PackageService packageService;
     private final PackageRepository packageRepository;
 
-
-
-
-
-
     @PostMapping
     public ResponseEntity<Package> createPackage(@RequestBody PackageRequestDTO dto) {
         Package created = packageService.createPackage(dto);

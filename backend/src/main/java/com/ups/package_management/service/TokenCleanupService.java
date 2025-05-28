@@ -1,25 +1,33 @@
 package com.ups.package_management.service;
 
+import com.ups.package_management.model.BlacklistedToken;
 import com.ups.package_management.repository.BlacklistedTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
-@Component
+@Service
 public class TokenCleanupService {
 
-    private final BlacklistedTokenRepository tokenRepository;
-
     @Autowired
-    public TokenCleanupService(BlacklistedTokenRepository tokenRepository) {
-        this.tokenRepository = tokenRepository;
+    private BlacklistedTokenRepository tokenRepo;
+
+    public void blacklistToken(String token, LocalDateTime expiry) {
+        if (!tokenRepo.existsByToken(token)) {
+            tokenRepo.save(new BlacklistedToken(token, expiry));
+        }
     }
 
-    @Scheduled(cron = "0 0 * * * *") // Runs every hour
-    public void cleanExpiredTokens() {
+    public boolean isBlacklisted(String token) {
+        return tokenRepo.existsByToken(token);
+    }
+
+    // Optional: cleanup expired tokens
+    public void cleanupExpiredTokens() {
         LocalDateTime now = LocalDateTime.now();
-        tokenRepository.deleteAllByExpiryBefore(now);
+        tokenRepo.findAll().stream()
+                .filter(t -> t.getExpiry().isBefore(now))
+                .forEach(t -> tokenRepo.delete(t));
     }
 }
