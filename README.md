@@ -39,8 +39,7 @@ This is a full-stack logistics package management system built with **Spring Boo
 ## 🛠️ Tech Stack
 
 ### Frontend
-- Next.js 14
-- React
+- Next.js
 - Tailwind CSS
 - Axios
 - React Hot Toast
@@ -51,6 +50,7 @@ This is a full-stack logistics package management system built with **Spring Boo
 - Spring Security + JWT
 - H2 / MySQL DB (dev/prod)
 - Maven, Lombok, JPA
+- POSTMAN Api
 - MYSQL
 
 ---
