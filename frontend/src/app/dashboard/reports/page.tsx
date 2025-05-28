@@ -28,7 +28,7 @@ export default function ReportsPage() {
   const [report, setReport] = useState<Package[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // 🔐 JWT-protected fetch for summary
+  //JWT-protected fetch for summary
   const fetchSummary = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -43,7 +43,7 @@ export default function ReportsPage() {
     }
   };
 
-  // 🔐 JWT-protected fetch for full report
+  //JWT-protected fetch for full report
   const fetchReport = async () => {
     try {
       const token = localStorage.getItem('token');
