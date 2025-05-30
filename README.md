@@ -4,15 +4,15 @@ This is a full-stack logistics package management system built with **Spring Boo
 
 ---
 
-## ✅ Backend Features (Spring Boot)
+##  Backend Features (Spring Boot)
 
-### 🔐 1. User Authentication
+###  1. User Authentication
 - Register with username, email, password (with hashing)
 - Login with JWT token generation
 - JWT-based secure login and registration
 - Token stored in `localStorage` and attached to protected API requests
 
-### 📦 2. Package Management
+###  2. Package Management
 - Create, Read, Update, Delete packages
 - Fields:
   - Tracking Number (unique, required)
@@ -21,22 +21,22 @@ This is a full-stack logistics package management system built with **Spring Boo
   - Status (`PENDING`, `IN_TRANSIT`, `DELIVERED`)
   - Weight, Dimensions (optional)
 
-### 🔍 3. Search & Filter
+###  3. Search & Filter
 - Search by tracking number
 - Filter by status
 
-### 📊 4. Reporting
+###  4. Reporting
 - Summary: total, delivered, pending packages
 - Report: all package details
 
-- ### 💻 Responsive UI
+- ###  Responsive UI
 - Collapsible sidebar with hamburger menu on mobile
 - Theming aligned with UPS branding
 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - Next.js
@@ -55,7 +55,7 @@ This is a full-stack logistics package management system built with **Spring Boo
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 ```bash
 cd backend/package-management
