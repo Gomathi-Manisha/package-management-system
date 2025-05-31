@@ -55,8 +55,3 @@ This is a full-stack logistics package management system built with **Spring Boo
 
 ---
 
-## Running Locally
-
-```bash
-cd backend/package-management
-./mvnw spring-boot:run
